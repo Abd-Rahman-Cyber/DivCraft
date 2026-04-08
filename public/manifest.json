@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "DivCraft - Element to Code",
+  "version": "1.0.0",
+  "description": "Select any element on a webpage and convert it into clean HTML/JSX and CSS.",
+  "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "index.html?popup=true"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["index.css"]
+    }
+  ]
+}
